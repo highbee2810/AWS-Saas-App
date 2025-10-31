@@ -3,3 +3,4 @@ Modern companies struggle to deploy and maintain scalable, secure, and continuou
 ## Project Goal
 Build and deploy a 3-tier web application (Frontend + Backend + Database) on AWS with a fully automated CI/CD pipeline and monitoring setup.
 ## Architecture diagram
+![AWS Architecture](./docs/AWS-Saas-App-diagram.png)
