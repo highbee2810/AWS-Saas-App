@@ -7,19 +7,38 @@ resource "aws_vpc" "main" {
         Name = "Saas_VPC"
     }
 }
-resource "aws_subnet" "public_subnet" {
-  vpc_id = var.vpc_cidr
+resource "aws_subnet" "public_subnet1" {
+  vpc_id = aws_vpc.main.id
   cidr_block = var.public_subnet_cidr_1
 availability_zone = "us-east-2a"
   tags = {
     Name = " first Public_Subnet"
   }
+  map_public_ip_on_launch = true
 }
-resource "aws_subnet" "public_subnet" {
-  vpc_id = var.vpc_cidr
+resource "aws_subnet" "public_subnet2" {
+  vpc_id = aws_vpc.main.id
   cidr_block = var.public_subnet_cidr_2
 availability_zone = "us-east-2b"
   tags = {
     Name = " second Public_Subnet"
+  }
+  map_public_ip_on_launch = true
+}
+resource "aws_subnet" "private" {
+  vpc_id = aws_vpc.main.id
+  cidr_block = var.private_subnet_cidr1
+availability_zone = "us-east-2a"
+  tags = {
+    Name = " first Private_Subnet"
+  }
+  
+}
+resource "aws_subnet" "private2" {
+  vpc_id = aws_vpc.main.id
+  cidr_block = var.private_subnet_cidr2
+availability_zone = "us-east-2b"
+  tags = {
+    Name = " second Private_Subnet"
   }
 }
