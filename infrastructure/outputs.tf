@@ -18,3 +18,11 @@ output "private_subnet_id2" {
     description = "The first private subnet id"
     value = aws_subnet.private2.id
 }
+output "internet_gateway_id" {
+    description = "The ID of the Internet Gateway"
+    value = aws_internet_gateway.igw.id
+}
+output "aws_eip" {
+description = "elastic ip address for NAT gateway"
+value = aws_eip.nat_eip.id
+}
