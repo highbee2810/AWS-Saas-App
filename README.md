@@ -44,4 +44,12 @@ All Terraform files are located in the `infrastructure/` directory.
 | `outputs.tf`  | Key outputs like VPC ID, subnet IDs, etc.    |
 
 ---
+## Deployment
+run the commands
+```
+terraform init
+terrafrom plan
+terraform apply
+
+```
 
